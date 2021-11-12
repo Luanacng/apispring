@@ -29,7 +29,7 @@ public class SetorResource {
 	
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Setor> findById(@PathVariable Integer id) {
-		Setor obj = service.findByID(id);
+		Setor obj = service.findByid(id);
 		return ResponseEntity.ok().body(obj);
 	}
 	

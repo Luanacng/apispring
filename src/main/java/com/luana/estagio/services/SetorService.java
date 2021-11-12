@@ -7,6 +7,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.luana.estagio.domain.Aluno;
 import com.luana.estagio.domain.Setor;
 import com.luana.estagio.repositories.SetorRepository;
 
@@ -16,9 +17,13 @@ public class SetorService {
 	@Autowired
 	private SetorRepository repository;
 	
-	public Setor findByID(Integer id) {
-		Optional<Setor> obj = repository.findById(id);
-		return obj.orElseThrow();
+//	public Setor findByID(Integer id) {
+//		Optional<Setor> obj = repository.findById(id);
+//		return obj.orElseThrow();
+//	}
+	
+	public Setor findByid(Integer id) {
+		return repository.findByid(id);
 	}
 	
 	public List<Setor> findAll() {
@@ -36,7 +41,7 @@ public class SetorService {
 	}
 	
 	public Setor update(Integer id, Setor obj) {
-		Setor newObj = findByID(id);
+		Setor newObj = findByid(id);
 		newObj.setNome(obj.getNome());
 		return repository.save(newObj);
 	}

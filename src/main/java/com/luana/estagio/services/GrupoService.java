@@ -7,6 +7,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.luana.estagio.domain.Aluno;
 import com.luana.estagio.domain.Grupo;
 import com.luana.estagio.repositories.GrupoRepository;
 
@@ -16,9 +17,12 @@ public class GrupoService {
 	@Autowired
 	private GrupoRepository repository;
 	
-	public Grupo findByID(Integer id) {
-		Optional<Grupo> obj = repository.findById(id);
-		return obj.orElseThrow();
+//	public Grupo findByID(Integer id) {
+//		Optional<Grupo> obj = repository.findById(id);
+//		return obj.orElseThrow();
+//	}
+	public Grupo findByid(Integer id) {
+		return repository.findByid(id);
 	}
 	
 	public List<Grupo> findAll() {
@@ -36,7 +40,7 @@ public class GrupoService {
 	}
 	
 	public Grupo update(Integer id, Grupo obj) {
-		Grupo newObj = findByID(id);
+		Grupo newObj = findByid(id);
 		newObj.setNome(obj.getNome());
 		newObj.setInstituicao(obj.getInstituicao());
 		newObj.setSetor(obj.getSetor());

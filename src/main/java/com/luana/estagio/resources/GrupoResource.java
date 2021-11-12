@@ -28,8 +28,8 @@ public class GrupoResource {
 	private GrupoService service;
 
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<Grupo> findById(@PathVariable Integer id) {
-		Grupo obj = service.findByID(id);
+	public ResponseEntity<Grupo> findByid(@PathVariable Integer id) {
+		Grupo obj = service.findByid(id);
 		return ResponseEntity.ok().body(obj);
 	}
 	
