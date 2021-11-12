@@ -8,4 +8,6 @@ import com.luana.estagio.domain.Aluno;
 @Repository
 public interface AlunoRepository extends JpaRepository<Aluno, Integer> {
 
+	Aluno findByid(Integer id);
+	
 }

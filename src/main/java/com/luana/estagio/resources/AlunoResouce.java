@@ -28,8 +28,8 @@ public class AlunoResouce {
 	private AlunoService service;
 	
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<Aluno> findById(@PathVariable Integer id) {
-		Aluno obj = service.findByID(id);
+	public ResponseEntity<Aluno> findByid(@PathVariable Integer id) {
+		Aluno obj = service.findByid(id);
 		return ResponseEntity.ok().body(obj);
 	}
 	

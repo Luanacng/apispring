@@ -17,9 +17,13 @@ public class AlunoService {
 	@Autowired
 	private AlunoRepository repository;
 	
-	public Aluno findByID(Integer id) {
-		Optional<Aluno> obj = repository.findById(id);
-		return obj.orElseThrow();
+//	public Aluno findByID(Integer id) {
+//		Optional<Aluno> obj = repository.findById(id);
+//		return obj.orElseThrow();
+//	}
+	
+	public Aluno findByid(Integer id) {
+		return repository.findByid(id);
 	}
 	
 	public List<Aluno> findAll() {
@@ -37,7 +41,7 @@ public class AlunoService {
 	}
 	
 	public Aluno update(Integer id, Aluno obj) {
-		Aluno newObj = findByID(id);
+		Aluno newObj = findByid(id);
 		newObj.setNome(obj.getNome());
 		newObj.setMatricula(obj.getMatricula());
 		newObj.setCurso(obj.getCurso());
