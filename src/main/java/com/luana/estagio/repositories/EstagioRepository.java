@@ -18,4 +18,6 @@ public interface EstagioRepository extends JpaRepository<Estagio, Integer> {
 	@Query("SELECT obj FROM Estagio obj WHERE obj.finalizado = true ORDER BY obj.fim")
 	List<Estagio> findAllClosed();
 	
+	Estagio findByid(Integer id);
+	
 }

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.luana.estagio.domain.Aluno;
 import com.luana.estagio.domain.Estagio;
 import com.luana.estagio.services.EstagioService;
 
@@ -28,8 +29,8 @@ public class EstagioResouce {
 	private EstagioService service;
 	
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<Estagio> findById(@PathVariable Integer id) {
-		Estagio obj = service.findByID(id);
+	public ResponseEntity<Estagio> findByid(@PathVariable Integer id) {
+		Estagio obj = service.findByid(id);
 		return ResponseEntity.ok().body(obj);
 	}
 	

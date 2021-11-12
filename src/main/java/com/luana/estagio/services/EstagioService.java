@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.luana.estagio.domain.Aluno;
 import com.luana.estagio.domain.Estagio;
 import com.luana.estagio.repositories.EstagioRepository;
 
@@ -15,9 +16,13 @@ public class EstagioService {
 	@Autowired
 	private EstagioRepository repository;
 
-	public Estagio findByID(Integer id) {
-		Optional<Estagio> obj = repository.findById(id);
-		return obj.orElseThrow();
+//	public Estagio findByID(Integer id) {
+//		Optional<Estagio> obj = repository.findById(id);
+//		return obj.orElseThrow();
+//	}
+	
+	public Estagio findByid(Integer id) {
+		return repository.findByid(id);
 	}
 	
 	public List<Estagio> findAllOpen() {
@@ -45,7 +50,7 @@ public class EstagioService {
 	}
 	
 	public Estagio update(Integer id, Estagio obj) {
-		Estagio newObj = findByID(id);
+		Estagio newObj = findByid(id);
 		newObj.setNome(obj.getNome());
 		newObj.setDescricao(obj.getDescricao());
 		newObj.setInicio(obj.getInicio());
