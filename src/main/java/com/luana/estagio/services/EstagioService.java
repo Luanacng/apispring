@@ -1,12 +1,10 @@
 package com.luana.estagio.services;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.luana.estagio.domain.Aluno;
 import com.luana.estagio.domain.Estagio;
 import com.luana.estagio.repositories.EstagioRepository;
 
